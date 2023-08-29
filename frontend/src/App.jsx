@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react'
 import Index from './pages/Index'
 import Edit from './pages/Edit'
 import Add from './pages/Add'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
 
 
 function App() {
@@ -23,6 +25,14 @@ function App() {
               <Route 
                 exact path='add'
                 element={<Add />}
+              />
+              <Route
+                path='/login'
+                element={<Login/>}
+              />
+              <Route
+                path='/signup'
+                element={<Signup/>}
               />
         </Routes>    
     </>
