@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { Link, Outlet } from "react-router-dom"
 import { fetchTodos, selectAllTodos } from "../features/posts/postsSlice"
 import { useDispatch, useSelector } from 'react-redux'
+import { useLogout } from '../hooks/useLogout'
 
 function Index() {
   const dispatch = useDispatch()
@@ -27,12 +28,16 @@ function Index() {
     )
   })
 
+  const handleClick = () => {
+
+  }
+
 
   
   return (
     <main className="flex flex-col items-center gap-y-20 border-2 border-red-400">
       
-      <div className='p-4 flex gap-x-4'>
+      <div className='p-4 flex gap-x-4 w-full'>
         <Link to='/'>
           <h1 className="text-4xl underline">My todo list</h1>
         </Link>
