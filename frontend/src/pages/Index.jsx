@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLogout } from '../hooks/useLogout'
 
 function Index() {
+  const { logout } = useLogout()
   const dispatch = useDispatch()
   const todos = useSelector(selectAllTodos)
   dispatch(fetchTodos)
@@ -29,7 +30,7 @@ function Index() {
   })
 
   const handleClick = () => {
-
+    logout()
   }
 
 
@@ -37,8 +38,11 @@ function Index() {
   return (
     <main className="flex flex-col items-center gap-y-20 border-2 border-red-400">
       
-      <div className='p-4 flex gap-x-4 w-full'>
-        <Link to='/'>
+      <div className='p-4 flex justify-center gap-x-4 w-full'>
+        <Link 
+          to='/'
+          className=''
+        >
           <h1 className="text-4xl underline">My todo list</h1>
         </Link>
         <Link 
@@ -47,6 +51,7 @@ function Index() {
         >
           Add +
         </Link>
+        <a onClick={handleClick} className="link link-accent self-center">Logout</a>
       </div>
 
       <section className="flex flex-col items-center gap-y-4 w-full">
