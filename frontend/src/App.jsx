@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 
 // pages & components
 import Index from './pages/Index'
+import Home from './pages/Home'
 import Edit from './pages/Edit'
 import Add from './pages/Add'
 import Login from './pages/Login'
@@ -19,11 +20,15 @@ function App() {
                 element={<Index />} 
               />
               <Route 
+                path='/home'
+                element={<Home />}
+              />
+              <Route 
                 exact path='edit/:todoId'
                 element={<Edit />}
               />
               <Route 
-                exact path='add'
+                exact path='home/add'
                 element={<Add />}
               />
               <Route
