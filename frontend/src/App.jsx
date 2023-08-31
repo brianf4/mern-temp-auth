@@ -24,7 +24,7 @@ function App() {
                 element={<Home />}
               />
               <Route 
-                exact path='edit/:todoId'
+                exact path='home/edit/:todoId'
                 element={<Edit />}
               />
               <Route 

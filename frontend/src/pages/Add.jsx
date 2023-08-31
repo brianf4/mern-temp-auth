@@ -23,7 +23,7 @@ function Add() {
      function handlePostSubmit(event) {
         event.preventDefault()
         dispatch(addTodo(text))
-        navigate('/')
+        navigate('/home')
     }
     
     return (

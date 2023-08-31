@@ -19,7 +19,7 @@ function Edit() {
     event.preventDefault()
 
     await dispatch(updateTodo({todoId, text})).unwrap()
-    navigate('/')
+    navigate('/home')
   }
   
 

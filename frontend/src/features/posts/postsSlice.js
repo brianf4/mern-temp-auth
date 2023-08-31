@@ -7,11 +7,13 @@ const initialState = {
   status: 'idle',
   error: null
 }
+console.log(initialState)
 
-
-export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
+export const fetchTodos = createAsyncThunk('todos/fetchTodos', async (user) => {
   try {
-    const res = await fetch(BASE_URL)
+    const res = await fetch(BASE_URL, {
+      headers: {'Authorization': `Bearer ${user.token}`},
+    })
     const data = await res.json()
     return data
   } catch (error) {
@@ -21,8 +23,7 @@ export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
 
 export const addTodo = createAsyncThunk('todos/addTodo', async (todo) => {
   try {
-    console.log(todo)
-    const textInfo = { ...todo }
+    const textInfo = todo
     const res = await fetch(BASE_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
